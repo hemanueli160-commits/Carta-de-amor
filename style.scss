@@ -1,0 +1,108 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.envelop {
+    width: 15rem;
+    height: 10rem;
+    position: relative;
+}
+
+@media (min-width: 400px) {
+    .envelop { width: 20rem; height: 15rem; }
+}
+
+@media (min-width: 600px) {
+    .envelop { width: 25rem; height: 20rem; }
+}
+
+.envelop__front-paper {
+    position: absolute;
+    width: 100%; height: 100%; bottom: 0; left: 0;
+    border-radius: 0.7rem;
+    border: 0.35rem solid #967b5c;
+    background-color: #ba9872;
+    clip-path: polygon(100% 0%, 50% 70%, 0% 0%, 0% 100%, 100% 100%);
+    z-index: 300;
+}
+
+.envelop__back-paper {
+    position: absolute;
+    width: 100%; height: 100%; bottom: 0; left: 0;
+    border-radius: 0.7rem;
+    background-color: #967b5c;
+    clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 0% 90%);
+    z-index: 100;
+}
+
+.envelop__up-paper {
+    position: relative;
+    width: 100%; height: 100%;
+    border-radius: 0.7rem;
+    background-color: #967b5c;
+    z-index: 400;
+    clip-path: polygon(0% 0%, 100% 0%, 50% 81%);
+}
+
+.envelop__sticker {
+    width: 20%; height: 20%;
+    position: absolute;
+    margin: auto;
+    top: 30%; left: 0; bottom: 0; right: 0;
+    z-index: 450;
+    background-image: url("https://www.freepnglogos.com/uploads/heart-png/emoji-heart-33.png");
+    background-color: #f9f9f9;
+    border: 0.3rem solid #e2e2e2;
+    background-size: 2rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+}
+
+.envelop__content {
+    position: absolute;
+    width: 100%; height: 100%; bottom: 0; left: 0;
+    z-index: 200;
+}
+
+.love-notes {
+    width: 100%; height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.note {
+    width: 95%; height: 30%;
+    background-color: #f9f9f9;
+    position: absolute;
+    overflow: hidden;
+    transition: height 0.5s;
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
+    bottom: 10%;
+}
+
+.note__text {
+    font-family: "Sofia", cursive;
+    padding: 1rem;
+    text-align: center;
+}
+
+.note__text p { font-size: 1rem; margin-bottom: 0.5rem; }
+
+/* Cursores */
+.scissors { cursor: url("https://i.postimg.cc/GtLCdKxR/sisors.png"), pointer; }
+.scissors:active { cursor: url("https://i.postimg.cc/GtXQ7WPZ/pngwing-com.png"), pointer; }
+.cursor { cursor: pointer; }
